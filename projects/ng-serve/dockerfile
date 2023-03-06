@@ -1,0 +1,16 @@
+ARG VERSION_NGINEX
+ARG VERSION_NGINEX_SUFFIX
+
+FROM nginx:${VERSION_NGINEX}${VERSION_NGINEX_SUFFIX} as publish
+RUN apk add --update npm
+RUN npm i -g pnpm typescript ts-node
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+WORKDIR /startup
+COPY package.json startup.ts ./
+RUN pnpm i
+RUN chmod +x ./startup.ts
+
+ENTRYPOINT ["./startup.ts"]
+CMD nginx -g "daemon off;"

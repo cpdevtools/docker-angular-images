@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # ng-sdk:
+  #   image: ng-sdk
+  #   build:
+  #     dockerfile: dockerfile
+  #     context: ./projects/ng-sdk
+  #     secrets:
+  #       - GITHUB_USER
+  #       - GITHUB_TOKEN
+  #     args:
+  #       VERSION_NG: ${VERSION_NG}
+  #       VERSION_NODEJS: ${VERSION_NODEJS}
+
+  ng-serve:
+    image: ng-serve
+    build:
+      dockerfile: dockerfile
+      context: ./projects/ng-serve
+      args:
+        VERSION_NG: ${VERSION_NG}
+        VERSION_NODEJS: ${VERSION_NODEJS}
+        VERSION_NGINEX: ${VERSION_NGINEX}
+        VERSION_NGINEX_SUFFIX: ${VERSION_NGINEX_SUFFIX}
+
+secrets:
+  GITHUB_USER:
+    environment: GITHUB_USER
+  GITHUB_TOKEN:
+    environment: GITHUB_TOKEN

@@ -1,0 +1,23 @@
+{
+    "name": "@cpdevtools/docker-angular-images",
+    "version": "13.0.0-dev.0",
+    "private": true,
+    "scripts": {
+        "build": "run-s build:*",
+        "build:ng-serve": "docker compose build ng-serve --progress=plain",
+        "build:ng-sdk": "docker compose build ng-sdk  --progress=plain",
+        "build:dom-config": "pnpm -r run build",
+        "pack": "pnpm -r run pack",
+        "release": "pnpm -r run release",
+        "test": "echo \"No test to run.\"",
+        "actions-build": "pnpm run build",
+        "actions-build-ng-serve": "pnpm run build:ng-serve",
+        "actions-build-ng-sdk": "pnpm run build:ng-sdk",
+        "actions-test": "pnpm run test",
+        "actions-pack": "pnpm run pack",
+        "actions-publish": "pnpm run release"
+    },
+    "devDependencies": {
+        "npm-run-all2": "^6.0.4"
+    }
+}

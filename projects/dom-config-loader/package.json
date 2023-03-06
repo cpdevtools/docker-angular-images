@@ -1,0 +1,20 @@
+{
+    "name": "@cpdevtools/dom-config-loader",
+    "version": "0.0.0-PLACEHOLDER",
+    "repository": "https://github.com/cpdevtools/docker",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "scripts": {
+        "build": "tsc --project tsconfig.json",
+        "pack": "mkdir ./pack && pnpm pack --pack-destination ./pack",
+        "release": "pnpm publish ./pack --access public --publish-branch 'release/latest'"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/node": "^18.14.6",
+        "type-fest": "^3.6.1",
+        "typescript": "^4.9.5"
+    }
+}
