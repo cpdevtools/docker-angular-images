@@ -18,7 +18,6 @@ inputs:
     description: "The name of the image to build"
     required: true
 
-
 runs:
   using: "composite"
   steps:
@@ -33,9 +32,9 @@ runs:
     - name: Docker - Set image id
       shell: bash
       run: |
-          ID=ghcr.io/${{github.repository}}/${{ inputs.image }}
-          ID=$(echo $ID | tr '[A-Z]' '[a-z]')
-          echo "IMAGE_ID=$ID" >> $GITHUB_ENV
+        ID=ghcr.io/${{github.repository}}/${{ inputs.image }}
+        ID=$(echo $ID | tr '[A-Z]' '[a-z]')
+        echo "IMAGE_ID=$ID" >> $GITHUB_ENV
 
     - name: Docker - Add full version tag
       shell: bash
@@ -88,5 +87,3 @@ runs:
       shell: bash
       if: ${{ steps.version.outputs.isHighestVersion == 'true' }}
       run: docker push $IMAGE_ID:next
-
-
