@@ -25,7 +25,12 @@
     "fix:prettier": "prettier --write --ignore-unknown .",
     "pre-commit": "run-s pre-commit:*",
     "pre-commit:tags": "git tag | xargs git tag -d",
-    "reset-hard": "git clean -dfx && git reset --hard && pnpm i"
+    "pre-commit:set-version-placeholders": "pnpm run set-version-placeholders",
+    "reset-hard": "git clean -dfx && git reset --hard && pnpm i",
+    "set-version": "run-p \"set-version:* {1}\" --",
+    "set-version:set-version": "pnpm version --allow-same-version --commit-hooks=false --git-tag-version=false",
+    "set-version:set-project-versions": "pnpm -r run set-version",
+    "set-version-placeholders": "pnpm -r run set-version 0.0.0-PLACEHOLDER"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
