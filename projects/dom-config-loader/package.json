@@ -9,7 +9,7 @@
     "build:ts": "tsc --project tsconfig.json",
     "build:copy-package": "ts-node .scripts/copy-package.ts",
     "pack": "cd ./dist && mkdir ./pack && pnpm pack --pack-destination ./pack",
-    "release": "pnpm publish ./dist/pack --access public --publish-branch 'release/latest'",
+    "release": "pnpm publish ./dist --access public --publish-branch 'release/latest'",
     "set-version": "run-p \"set-version:* {1}\" --",
     "set-version:npm": "pnpm version --allow-same-version --commit-hooks=false --git-tag-version=false"
   },
