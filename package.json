@@ -14,12 +14,6 @@
     "pack": "pnpm -r run pack",
     "release": "pnpm -r run release",
     "test": "echo \"No test to run.\"",
-    "actions-build": "pnpm run build",
-    "actions-build-ng-serve": "pnpm run build:ng-serve",
-    "actions-build-ng-sdk": "pnpm run build:ng-sdk",
-    "actions-test": "pnpm run test",
-    "actions-pack": "pnpm run pack",
-    "actions-publish": "pnpm run release",
     "tags": "git tag | xargs git tag -d",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier --write --ignore-unknown .",
@@ -30,7 +24,13 @@
     "set-version": "run-p \"set-version:* {1}\" --",
     "set-version:set-version": "pnpm version --allow-same-version --commit-hooks=false --git-tag-version=false",
     "set-version:set-project-versions": "pnpm -r run set-version",
-    "set-version-placeholders": "pnpm -r run set-version 0.0.0-PLACEHOLDER"
+    "set-version-placeholders": "pnpm -r run set-version 0.0.0-PLACEHOLDER",
+    "actions-build": "pnpm run build",
+    "actions-build-ng-serve": "pnpm run build:ng-serve",
+    "actions-build-ng-sdk": "pnpm run build:ng-sdk",
+    "actions-test": "pnpm run test",
+    "actions-pack": "pnpm run pack",
+    "actions-publish": "pnpm run release"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"

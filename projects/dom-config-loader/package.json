@@ -5,14 +5,19 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --project tsconfig.json",
+    "build": "run-s build:*",
+    "build:ts": "tsc --project tsconfig.json",
+    "build:copy-package": "ts-node .scripts/copy-package.ts",
     "pack": "mkdir ./pack && pnpm pack --pack-destination ./pack",
-    "release": "pnpm publish ./pack --access public --publish-branch 'release/latest'"
+    "release": "pnpm publish ./pack --access public --publish-branch 'release/latest'",
+    "set-version": "run-p \"set-version:* {1}\" --",
+    "set-version:npm": "pnpm version --allow-same-version --commit-hooks=false --git-tag-version=false"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@cpdevtools/lib-node-utilities": "^0.4.49",
     "@types/node": "^18.14.6",
     "type-fest": "^3.6.1",
     "typescript": "^4.9.5"
