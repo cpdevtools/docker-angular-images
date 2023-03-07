@@ -8,10 +8,14 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      isPrerelease: ${{ steps.version.outputs.isPrerelease }}
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3.3.0
       - name: Check Version
+        id: version
         uses: ./.github/actions/check-version
 
   publish-ng-serve-image:
@@ -53,6 +57,11 @@ jobs:
 
       - name: Install Node & Dependencies
         uses: ./.github/actions/setup-node
+
+      - name: Set Version
+        uses: ./.github/actions/set-version
+        with:
+          version: ${{ needs.setup.outputs.version }}
 
       - name: Build
         uses: ./.github/actions/build
