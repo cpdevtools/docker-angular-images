@@ -15,11 +15,13 @@ importers:
     specifiers:
       "@cpdevtools/lib-node-utilities": ^0.4.49
       "@types/node": ^18.14.6
+      ts-node: ^10.9.1
       type-fest: ^3.6.1
       typescript: ^4.9.5
     devDependencies:
       "@cpdevtools/lib-node-utilities": 0.4.49
       "@types/node": 18.14.6
+      ts-node: 10.9.1_alpjt73dvgv6kni625hu7f2l4m
       type-fest: 3.6.1
       typescript: 4.9.5
 
