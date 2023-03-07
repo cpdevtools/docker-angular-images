@@ -29,6 +29,7 @@
     "actions-build-ng-serve": "pnpm run build:ng-serve",
     "actions-build-ng-sdk": "pnpm run build:ng-sdk",
     "actions-test": "pnpm run test",
+    "actions-set-version": "pnpm run set-version",
     "actions-pack": "pnpm run pack",
     "actions-publish": "pnpm run release"
   },
