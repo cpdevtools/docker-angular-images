@@ -12,5 +12,5 @@ COPY package.json startup.ts ./
 RUN pnpm i
 RUN chmod +x ./startup.ts
 
-ENTRYPOINT ["./startup.ts"]
+ENTRYPOINT ["/startup/startup.ts"]
 CMD nginx -g "daemon off;"

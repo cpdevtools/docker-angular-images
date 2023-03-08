@@ -19,6 +19,7 @@ import { hideBin } from "yargs/helpers";
   if (existsSync("/www")) {
     await unlink("/www");
   }
+
   const buildDir = path.join("/builds", process.env["BUILD"] ?? "production");
   await symlink(buildDir, "/www", "dir");
 
@@ -26,6 +27,11 @@ import { hideBin } from "yargs/helpers";
   const config = await readFile(configPath, { encoding: "utf-8" });
 
   const indexPath = path.join("/www", "index.html");
+
+  console.info("Starting Web App");
+  console.info("build:", buildDir);
+  console.info("index:", indexPath);
+
   const $ = cheerio.load(await readFile(indexPath));
   const head = $("html > head");
   let scriptTag = head.find('> script[id="config"][type="application/json"]');
@@ -35,6 +41,12 @@ import { hideBin } from "yargs/helpers";
   }
   scriptTag.text(config);
 
-  writeFile(indexPath, $.html({ baseURI: "/asdf/" }), { encoding: "utf-8" });
+  const modIndexSrc = $.html();
+
+  console.info("Modified", indexPath);
+  console.info(modIndexSrc);
+  console.info();
+
+  writeFile(indexPath, modIndexSrc, { encoding: "utf-8" });
   spawnSync(`/docker-entrypoint.sh ${argv.command!}`, { shell: true, stdio: "inherit" });
 })();
