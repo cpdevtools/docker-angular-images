@@ -1,8 +1,9 @@
 ARG VERSION_NODEJS
 ARG VERSION_NODEJS_SUFFIX
+ARG VERSION_NG
 
 FROM node:${VERSION_NODEJS}${VERSION_NODEJS_SUFFIX}
-RUN npm i -g pnpm typescript ts-node
+RUN npm i -g pnpm typescript ts-node @angular-cli@VERSION_NG
 
 VOLUME [ "/project" ]
 WORKDIR /project
