@@ -2,3 +2,8 @@ ARG VERSION_NODEJS
 ARG VERSION_NODEJS_SUFFIX
 
 FROM node:${VERSION_NODEJS}${VERSION_NODEJS_SUFFIX}
+RUN npm i -g pnpm yarn typescript ts-node
+
+VOLUME [ "/project" ]
+WORKDIR /project
+CMD ng serve
