@@ -49,5 +49,8 @@ import { hideBin } from "yargs/helpers";
   console.info(await readdir("/www"));
 
   writeFile(indexPath, modIndexSrc, { encoding: "utf-8" });
+
+  console.info(await readFile(indexPath, { encoding: "utf-8" }));
+
   spawnSync(`/docker-entrypoint.sh ${argv.command!}`, { shell: true, stdio: "inherit" });
 })();
