@@ -67,7 +67,7 @@ jobs:
           version: "${{ needs.setup.outputs.version }}"
 
       - name: Build
-        uses: ./.github/actions/build
+        run: pnpm run actions-build-dom-config
 
       - name: Pack
         uses: ./.github/actions/pack
