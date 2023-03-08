@@ -3,7 +3,7 @@
 import * as cheerio from "cheerio";
 import { spawnSync } from "child_process";
 import { existsSync } from "fs";
-import { readFile, symlink, unlink, writeFile } from "fs/promises";
+import { readdir, readFile, symlink, unlink, writeFile } from "fs/promises";
 import path from "path";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
@@ -46,6 +46,7 @@ import { hideBin } from "yargs/helpers";
   console.info("Modified", indexPath);
   console.info(modIndexSrc);
   console.info();
+  console.info(await readdir("/www"));
 
   writeFile(indexPath, modIndexSrc, { encoding: "utf-8" });
   spawnSync(`/docker-entrypoint.sh ${argv.command!}`, { shell: true, stdio: "inherit" });
