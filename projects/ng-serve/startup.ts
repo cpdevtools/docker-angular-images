@@ -26,13 +26,13 @@ import { hideBin } from "yargs/helpers";
   const configPath = path.join("/configs", process.env["CONFIG"] ?? "config.json");
   const config = await readFile(configPath, { encoding: "utf-8" });
 
-  const indexPath = path.join("/www", "index.html");
+  const indexPath = path.join(buildDir, "index.html");
 
   console.info("Starting Web App");
   console.info("build:", buildDir);
   console.info("index:", indexPath);
 
-  const $ = cheerio.load(await readFile(indexPath));
+  const $ = cheerio.load(await readFile(indexPath, { encoding: "utf-8" }));
   const head = $("html > head");
   let scriptTag = head.find('> script[id="config"][type="application/json"]');
   if (!scriptTag.length) {
