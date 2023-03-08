@@ -10,4 +10,4 @@ RUN npm i -g pnpm@${VERSION_PNPM} typescript@${VERSION_TYPESCRIPT} ts-node@${VER
 
 VOLUME [ "/project" ]
 WORKDIR /project
-CMD ng serve
+CMD ng serve --host 0.0.0.0
