@@ -7,16 +7,19 @@ on:
 
 jobs:
   setup:
+    name: Check that the new version can be published
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.version.outputs.version }}
-      isPrerelease: ${{ steps.version.outputs.isPrerelease }}
+      version: ${{ steps.version.outputs.targetVersion }}
+      isPrerelease: ${{ steps.version.outputs.targetIsPrerelease }}
+
     steps:
-      - name: Checkout Project
-        uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3.3.0
       - name: Check Version
         id: version
-        uses: ./.github/actions/check-version
+        uses: cpdevtools/action-versions@v0.5
+        with:
+          failInvalidCanCreate: true
 
   publish-ng-serve-image:
     runs-on: ubuntu-latest
@@ -61,7 +64,7 @@ jobs:
       - name: Set Version
         uses: ./.github/actions/set-version
         with:
-          version: ${{ needs.setup.outputs.version }}
+          version: "${{ needs.setup.outputs.version }}"
 
       - name: Build
         uses: ./.github/actions/build
