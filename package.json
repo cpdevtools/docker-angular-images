@@ -1,6 +1,6 @@
 {
   "name": "@cpdevtools/docker-angular-images",
-  "version": "13.0.0-dev.2",
+  "version": "13.0.0-dev.3",
   "private": true,
   "scripts": {
     "prepare": "run-s prepare:*",
