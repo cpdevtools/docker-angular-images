@@ -40,6 +40,6 @@
   "devDependencies": {
     "husky": "^8.0.3",
     "npm-run-all2": "^6.0.4",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.8"
   }
 }
