@@ -27,8 +27,8 @@ importers:
         specifier: ^18.18.0
         version: 18.19.9
       ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@18.19.9)(typescript@5.3.3)
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@18.19.9)(typescript@5.3.3)
       type-fest:
         specifier: ^3.6.1
         version: 3.6.1
@@ -87,7 +87,7 @@ packages:
       sha256-file: 1.0.0
       simple-git: 3.17.0
       strip-color: 0.1.0
-      ts-node: 10.9.1(@types/node@18.19.9)(typescript@4.9.5)
+      ts-node: 10.9.2(@types/node@18.19.9)(typescript@4.9.5)
       tsimportlib: 0.0.3
       tslib: 2.5.0
       type-fest: 2.19.0
@@ -1446,8 +1446,8 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: true
 
-  /ts-node@10.9.1(@types/node@18.19.9)(typescript@4.9.5):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+  /ts-node@10.9.2(@types/node@18.19.9)(typescript@4.9.5):
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
@@ -1477,8 +1477,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node@10.9.1(@types/node@18.19.9)(typescript@5.3.3):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+  /ts-node@10.9.2(@types/node@18.19.9)(typescript@5.3.3):
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
