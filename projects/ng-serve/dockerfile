@@ -5,7 +5,7 @@ ARG VERSION_NODEJS_SERVE_SUFFIX
 FROM node:${VERSION_NODEJS}${VERSION_NODEJS_SERVE_SUFFIXs} as serve
 
 WORKDIR /startup
-COPY startup.ts ./
+COPY startup.sh ./
 RUN chmod +x ./startup.sh
 
 ENTRYPOINT ["/startup/startup.sh"]
