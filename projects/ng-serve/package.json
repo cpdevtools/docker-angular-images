@@ -1,13 +1,5 @@
 {
   "name": "@cpdevtools/docker-dotnet-images-ng-serve",
   "version": "0.0.0-PLACEHOLDER",
-  "private": true,
-  "dependencies": {
-    "@types/yargs": "^17.0.22",
-    "cheerio": "1.0.0-rc.12",
-    "yargs": "^17.7.1"
-  },
-  "devDependencies": {
-    "@types/node": "^18.14.6"
-  }
+  "private": true
 }
