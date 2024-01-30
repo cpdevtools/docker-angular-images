@@ -30,8 +30,8 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@18.19.9)(typescript@5.3.3)
       type-fest:
-        specifier: ^3.6.1
-        version: 3.6.1
+        specifier: ^4.10.2
+        version: 4.10.2
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -1194,7 +1194,7 @@ packages:
       '@types/normalize-package-data': 2.4.1
       normalize-package-data: 6.0.0
       parse-json: 7.1.1
-      type-fest: 4.10.1
+      type-fest: 4.10.2
     dev: true
 
   /readable-stream@1.0.34:
@@ -1521,13 +1521,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /type-fest@3.6.1:
-    resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
-    engines: {node: '>=14.16'}
-    dev: true
-
-  /type-fest@4.10.1:
-    resolution: {integrity: sha512-7ZnJYTp6uc04uYRISWtiX3DSKB/fxNQT0B5o1OUeCqiQiwF+JC9+rJiZIDrPrNCLLuTqyQmh4VdQqh/ZOkv9MQ==}
+  /type-fest@4.10.2:
+    resolution: {integrity: sha512-anpAG63wSpdEbLwOqH8L84urkL6PiVIov3EMmgIhhThevh9aiMQov+6Btx0wldNcvm4wV+e2/Rt1QdDwKHFbHw==}
     engines: {node: '>=16'}
     dev: true
 
