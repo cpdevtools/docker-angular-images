@@ -21,8 +21,8 @@ importers:
   projects/dom-config-loader:
     devDependencies:
       '@cpdevtools/lib-node-utilities':
-        specifier: ^0.4.62
-        version: 0.4.62
+        specifier: ^0.4.63
+        version: 0.4.63
       '@types/node':
         specifier: ^20.11.16
         version: 20.11.16
@@ -40,8 +40,8 @@ importers:
 
 packages:
 
-  /@cpdevtools/lib-node-utilities@0.4.62:
-    resolution: {integrity: sha512-moozPCCgjzDcsdwzqAlxC4XchdZolDpGIpDbLoDK1wZCQbGPg8fEu0xmib2X3MxCtTUOWMddcZvY6hVP9f1VdA==}
+  /@cpdevtools/lib-node-utilities@0.4.63:
+    resolution: {integrity: sha512-JqpEHpyJAzcq4CZqRvXaudL71bo38adTMgSgisasLMEoZlpPXJo3htJisNMBbncXyZTvpW/bFcajcsL9W9u9EA==}
     engines: {node: '>=14.16'}
     dependencies:
       '@inquirer/core': 2.3.0
